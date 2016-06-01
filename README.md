@@ -2,7 +2,7 @@
 
 ## Pretraining
 
-$$$ Data format
+### Data format
 
 #### states.training.csv
 
