@@ -53,12 +53,12 @@ th> csv[1]
   86 : "-0.004407051282051281"
 }
 th> ds = torch.Tensor(csv)
-th> xs = ds:narrow(2, 1, 85)
-th> #xs
+th> input = ds:narrow(2, 1, 85)
+th> #input
  42043
     85
-th> ys = ds:narrow(2, 85, 1)
-th> #ys
+th> target = ds:narrow(2, 85, 1)
+th> #target
  42043
      1    
 ```
