@@ -32,16 +32,15 @@ mlp:add(nn.Sigmoid())
 -- mlp:add(nn.Sigmoid())
 mlp:add(nn.Linear(60,1))
 
---print(mlp)
---print(valid)
--- mlp.add(nn.L1Penalty(0.5))
+-- consider: mlp:add(nn.L1Penalty(0.5))
 
-criterion = nn.MSECriterion() -- Mean Squared Error criterion
+criterion = nn.MSECriterion()
 trainer = nn.StochasticGradient(mlp, criterion)
-trainer:train(train) -- train using some examples
--- trainer:train(valid) -- train using some examples
+-- trainer.maxIteration = 100
+trainer.learningRate = 0.1
+trainer:train(train)
+-- trainer:train(valid) -- lazy eye-ball validation for a different in training error
 
--- -- local preditions = mlp:forward(valid)
 -- for i=1,10 do
 --   print(valid[i])
 --   -- print(predictions[i])
