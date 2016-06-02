@@ -32,33 +32,4 @@ Install cvsigo:
 $ luarocks install csvigo
 ```
 
-```
-$ th
-th> require 'csvigo'
-...
-th> csv = csvigo.load({path='states.training.transformed.csv', mode='raw'})
-...
-th> #csv
-42043
-th> csv[1]
-{
-  1 : "0"
-  2 : "0"
-  3 : "0"
-  4 : "0"
-...
-  83 : "0"
-  84 : "0"
-  85 : "0"
-  86 : "-0.004407051282051281"
-}
-th> ds = torch.Tensor(csv)
-th> input = ds:narrow(2, 1, 85)
-th> #input
- 42043
-    85
-th> target = ds:narrow(2, 85, 1)
-th> #target
- 42043
-     1    
-```
+See `train.lua`.
