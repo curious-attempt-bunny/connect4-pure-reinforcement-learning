@@ -1,5 +1,5 @@
 File.open('states.training.transformed.csv', 'w') do |f|
-    File.read('states.training.csv').lines.each do |line|
+    File.read('states.training.csv').lines.shuffle.each do |line|
         parts = line.strip.split(',')
         label = parts[-1]
         state = parts[0..-2].map { |p| p.split(';') }.flatten
