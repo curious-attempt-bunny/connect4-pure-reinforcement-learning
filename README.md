@@ -33,3 +33,5 @@ $ luarocks install csvigo
 ```
 
 See `train.lua`.
+
+I'm not able to get better than a MSE on validation data of 0.05 and I need a MSE of 0.0025. I've had the best results using an MLP of 85->60->30->15->1 layers.
